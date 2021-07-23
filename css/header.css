@@ -1,4 +1,5 @@
 .header {
+  display: none;
   border-bottom: 1px solid var(--bw-color-gray-30);
 }
 
@@ -37,4 +38,10 @@
 
 .header > .header__container > .header__container__nav > .header__container__buttons > :first-child{
   margin-right: 16px;
+}
+
+@media (min-width: 768px) {
+  .header {
+    display: block;
+  }
 }
