@@ -1,10 +1,12 @@
 @import url('./css/header.css');
+@import url('./css/footer.css');
 @import url('./css/components.css');
 
 :root {
   --color-primary-100: #0B485B;
   --color-primary-60: #19C1CE;
   --color-primary-50: #07E5EB;
+  --color-primary-40: #78EDF2;
 
   --color-highlight-60: #F2BF4E;
   --color-highlight-50: #F4CA6D;
@@ -32,10 +34,21 @@ body {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+a {
+  color: var(--bw-color-gray-100);
+}
+
 .row {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(12, 1fr);
+  margin: auto;
   max-width: var(--max-width);
 }
 
