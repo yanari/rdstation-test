@@ -1,8 +1,9 @@
-.button {
+:host > button {
   background-color: var(--bw-color-white);
   box-shadow: 0 4px 0 var(--bw-color-gray-100);
-  color: var(--bw-color-gray-100);
   border: none;
+  color: var(--bw-color-gray-100);
+  cursor: pointer;
   font-size: 14px;
   font-weight: 800;
   height: 36px;
@@ -12,16 +13,16 @@
   transform: translateY(-4px);
 }
 
-.button:hover {
+:host > button:hover {
   box-shadow: 0 0 0 var(--bw-color-gray-100);
   transform: translateY(0);
 }
 
-.button.btn-primary {
+:host([primary]) > button {
   background-color: var(--color-primary-60);
 }
 
-.button.btn-secondary {
+:host([secondary]) > button {
   border: 2px solid var(--bw-color-gray-100);
 }
 

@@ -1,1 +1,2 @@
-console.log('Running');
+import './components/navbar.js';
+import './components/button.js';
