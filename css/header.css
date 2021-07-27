@@ -5,7 +5,7 @@
 
 .header > .header__container {
   display: flex;
-  height: 80px;
+  height: var(--header-height);
   justify-content: space-between;
   margin: auto;
   max-width: var(--max-width);

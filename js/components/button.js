@@ -4,6 +4,7 @@
     <button>
       <slot></slot>
     </button>
+    <div></div>
   `;
   
   class CustomButton extends HTMLElement {

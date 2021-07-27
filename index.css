@@ -19,6 +19,8 @@
   --bw-color-white: #FFFFFF;
 
   --max-width: 1224px;
+
+  --header-height: 80px;
 }
 
 * {

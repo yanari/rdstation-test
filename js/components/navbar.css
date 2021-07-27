@@ -1,19 +1,27 @@
 :host {
-  display: none;
-}
-
-:host > nav {
-  margin-right: 62px;
+  align-items: center;
+  background-color: var(--bw-color-white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  left: 0;
+  top: var(--header-height);
+  width: 100%;
+  /* display: none; */
 }
 
 :host > nav > ul {
   align-items: center;
-  height: 100%;
   display: inline-flex;
-  gap: 62px;
+  height: 100%;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
 }
 
 :host > nav > ul > li {
+  padding-top: 16px;
   list-style: none;
 }
 
@@ -23,7 +31,21 @@
 
 @media (min-width: 768px) {
   :host {
-    align-items: center;
-    display: flex;
+    justify-content: flex-end;
+    flex-direction: row;
+    position: initial;
+  }
+
+  :host > nav {
+    margin-right: 62px;
+  }
+
+  :host > nav > ul {
+    flex-direction: row;
+    gap: 62px;
+  }
+
+  :host > nav > ul > li {
+    padding-top: 0;
   }
 }
