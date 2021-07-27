@@ -1,6 +1,5 @@
 @import url('./css/header.css');
 @import url('./css/footer.css');
-@import url('./css/components.css');
 
 :root {
   --color-primary-100: #0B485B;
