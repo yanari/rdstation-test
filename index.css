@@ -58,6 +58,10 @@ hr {
   display: block;
 }
 
+.display-md-flex {
+  display: flex;
+}
+
 .row {
   display: grid;
   gap: 24px;
@@ -121,6 +125,10 @@ hr {
 
   .display-lg-block {
     display: block;
+  }
+
+  .display-lg-flex {
+    display: flex;
   }
 
   .row > .col-lg-1 {

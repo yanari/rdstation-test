@@ -1,28 +1,42 @@
 :host {
-  align-items: center;
-  background-color: var(--bw-color-white);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   position: absolute;
   left: 0;
-  top: var(--header-height);
+  top: calc(var(--header-height) + 1px); /* cálculo pra mostrar a borda debaixo */
   width: 100%;
   /* display: none; */
 }
 
+:host > nav {
+  margin: 24px 0;
+}
+
 :host > nav > ul {
   align-items: center;
-  display: inline-flex;
+  display: flex;
   height: 100%;
   flex-direction: column;
-  margin: 0;
+  justify-content: stretch;
+  margin: 0 16px;
   padding: 0;
 }
 
 :host > nav > ul > li {
-  padding-top: 16px;
+  border-bottom: 1px solid var(--bw-color-gray-30);
+  padding: 16px 0;
   list-style: none;
+  width: 100%;
+}
+
+:host > nav > ul > li:last-of-type {
+  border-bottom: none;
+}
+
+:host > .header__container__buttons {
+  border-top: 1px solid var(--bw-color-gray-30);
+  background-color: var(--bw-color-gray-10);
+  display: flex;
+  justify-content: center;
+  padding: 24px 0;
 }
 
 :host > .header__container__buttons > :first-child {
@@ -31,21 +45,32 @@
 
 @media (min-width: 768px) {
   :host {
+    align-items: center;
+    background-color: var(--bw-color-white);
+    display: flex;
     justify-content: flex-end;
-    flex-direction: row;
     position: initial;
   }
 
   :host > nav {
-    margin-right: 62px;
+    margin: 0 62px 0 0;
   }
 
   :host > nav > ul {
     flex-direction: row;
     gap: 62px;
+    margin: 0;
   }
 
   :host > nav > ul > li {
-    padding-top: 0;
+    border-bottom: none;
+    padding: 0;
+  }
+
+  :host > .header__container__buttons {
+    border-top: none;
+    background-color: var(--bw-color-white);
+    display: block;
+    padding: 0;
   }
 }
