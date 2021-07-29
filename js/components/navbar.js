@@ -24,6 +24,26 @@
         this.addStylesheet();
       }
     }
+
+    static get observedAttributes() {
+      return ['open', 'mobile'];
+    }
+
+    get open() {
+      return this.getAttribute('open');
+    }
+
+    get mobile() {
+      return this.getAttribute('mobile');
+    }
+
+    set open(value) {
+      value = Boolean(value);
+      if (value)
+        this.setAttribute('open', '');
+      else
+        this.removeAttribute('open');
+    }
   
     addStylesheet() {
       const link = document.createElement('link');

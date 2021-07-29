@@ -22,7 +22,7 @@
       height: 4px;
       border-radius: 3px;
       margin: 4px 0;
-      transition: 0.5s;
+      transition: 0.3s;
     }
 
     #nav:before {
@@ -77,12 +77,19 @@
       return this.hasAttribute('open');
     }
 
+    get navbarMobile() {
+      return document.querySelector('navbar-content[mobile]');
+    }
+
     set open(value) {
       value = Boolean(value);
-      if (value)
+      if (value) {
         this.setAttribute('open', '');
-      else
+        this.navbarMobile.setAttribute('open', '');
+      } else {
         this.removeAttribute('open');
+        this.navbarMobile.removeAttribute('open');
+      }
     }
 
     _onClick() {

@@ -3,7 +3,15 @@
   left: 0;
   top: calc(var(--header-height) + 1px); /* cálculo pra mostrar a borda debaixo */
   width: 100%;
-  /* display: none; */
+  z-index: 1;
+
+  /* animation */
+  transition: transform .4s ease-in-out;
+  transform: translateY(-100vh);
+}
+
+:host([open]) {
+  transform: translateY(0vh);
 }
 
 :host > nav {
@@ -50,6 +58,7 @@
     display: flex;
     justify-content: flex-end;
     position: initial;
+    transform: translateY(0px);
   }
 
   :host > nav {
