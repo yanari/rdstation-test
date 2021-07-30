@@ -25,7 +25,57 @@
       </div>
     </header>
     <navbar-content mobile class="display-md-block display-lg-none"></navbar-content>
-    <section></section>
+    <section class="row">
+      <div class="form-container col-lg-4 col-12">
+        <div class="form-container__presentation">
+          <h3>Comece seus 10 dias de teste grátis do RD Station Marketing!</h3>
+          <p>Não precisa cadastrar cartão de crédito. 😉</p>
+        </div>
+        <form id="contact_form">
+          <form-field
+            name="name"
+            placeholder="Insira seu nome"
+            required
+            type="text"
+            label="Diga, qual seu nome?"
+          ></form-field>
+          <form-field
+            name="email"
+            placeholder="Insira seu e-mail"
+            required
+            type="email"
+            label="Seu email de trabalho"
+          ></form-field>
+          <form-field
+            name="tel"
+            placeholder="Insira seu número de telefone com DDD"
+            required
+            type="tel"
+            label="Seu telefone"
+          ></form-field>
+          <form-field
+            name="occupation"
+            placeholder="Selecione seu cargo"
+            required
+            type="select" // TODO: select aqui
+            label="Seu cargo de ocupação"
+          ></form-field>
+          <form-field
+            name="password"
+            required
+            type="password"
+            label="Crie uma senha"
+          ></form-field>
+          <form-field
+            name="confirm-password"
+            required
+            type="password"
+            label="Confirme sua senha"
+          ></form-field>
+          <button type="submit">submitnmt</button>
+        </form>
+      </div>
+    </section>
     <footer class="footer">
       <div class="footer__container">
         <div class="footer__container__first-row">

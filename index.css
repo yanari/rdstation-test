@@ -2,6 +2,8 @@
 @import url('./css/footer.css');
 
 :root {
+  --box-shadow-inset: #EEFBFB;
+
   --color-primary-100: #0B485B;
   --color-primary-60: #19C1CE;
   --color-primary-50: #07E5EB;
@@ -30,7 +32,8 @@
   padding: 0;
 }
 
-body {
+body,
+input[type="text"] {
   color: var(--bw-color-gray-100);
   font-family: 'Nunito Sans', sans-serif;
 }
