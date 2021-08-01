@@ -31,7 +31,7 @@
           <h3>Comece seus 10 dias de teste grátis do RD Station Marketing!</h3>
           <p>Não precisa cadastrar cartão de crédito. 😉</p>
         </div>
-        <form id="contact_form">
+        <form id="contact_form" action="https://app.rdstation.com.br/signup" method="POST">
           <form-field
             name="name"
             placeholder="Insira seu nome"
@@ -60,19 +60,19 @@
             label="Seu cargo de ocupação"
           >
             <select slot="input" name="occupation">
-              <option>Sócio(a) / CEO / Proprietário(a)</option>
-              <option>Diretor(a) de Vendas</option>
-              <option>Diretor(a) de Marketing</option>
-              <option>Diretor(a) Outras Áreas</option>
-              <option>Gerente de Marketing</option>
-              <option>Gerente de Vendas</option>
-              <option>Coordenador(a)/Supervisor(a) de Marketing</option>
-              <option>Coordenador(a)/Supervisor(a) de Vendas</option>
-              <option>Analista/Assistente de Marketing</option>
-              <option>Analista/Assistente de Vendas</option>
-              <option>Vendedor(a) / Executivo(a) de Contas</option>
-              <option>Estudante</option>
-              <option>Outros Cargo</option>
+              <option value="0">Sócio(a) / CEO / Proprietário(a)</option>
+              <option value="1">Diretor(a) de Vendas</option>
+              <option value="2">Diretor(a) de Marketing</option>
+              <option value="3">Diretor(a) Outras Áreas</option>
+              <option value="4">Gerente de Marketing</option>
+              <option value="5">Gerente de Vendas</option>
+              <option value="6">Coordenador(a)/Supervisor(a) de Marketing</option>
+              <option value="7">Coordenador(a)/Supervisor(a) de Vendas</option>
+              <option value="8">Analista/Assistente de Marketing</option>
+              <option value="9">Analista/Assistente de Vendas</option>
+              <option value="10">Vendedor(a) / Executivo(a) de Contas</option>
+              <option value="11">Estudante</option>
+              <option value="12">Outros Cargo</option>
             </select>
           </form-field>
           <form-field
@@ -82,11 +82,25 @@
             label="Crie uma senha"
           ><input slot="input" name="password"></form-field>
           <form-field
-            name="confirm-password"
+            name="confirm_password"
             required
             type="password"
             label="Confirme sua senha"
-          ><input slot="input" name="confirm-password"></form-field>
+          ><input slot="input" name="confirm_password"></form-field>
+          <radio-button-form-field
+            name="has_site"
+            type="radio"
+            label="Meu site é"
+          >
+            <input slot="option" name="has_site">
+          </radio-button-form-field>
+          <radio-button-form-field
+            name="has_site"
+            type="radio"
+            label="Ainda não tenho site"
+          >
+            <input slot="option" name="has_site">
+          </radio-button-form-field>
           <button type="submit">submitnmt</button>
         </form>
       </div>

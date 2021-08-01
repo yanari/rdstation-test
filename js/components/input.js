@@ -26,15 +26,20 @@
       padding: 0 12px !important;
       width: 100%;
     }
+
+    .form-field > .input-wrapper > ::slotted(.input)::placeholder { /* TODO: botar o placeholder do select cinza*/
+      color: var(--bw-color-gray-60);
+    }
     
     .form-field > .input-wrapper > ::slotted(.input:active),
     .form-field > .input-wrapper > ::slotted(.input:focus) {
       border-color: var(--color-primary-60);
+      box-shadow: none;
       border-radius: 0;
       outline: none;
     }
 
-    .form-field > .input-wrapper > ::slotted(select.input) {
+    .form-field > .input-wrapper > ::slotted(select.input) { /* TODO: botar o padding no icone */
       appearance: none;
       background: url('assets/icons/caret-down.svg') no-repeat right;
       background-origin: border-box;
@@ -73,10 +78,10 @@
 
         this.labelTag = this.shadowRoot.querySelector('label');
         const slots = this.shadowRoot.querySelector('slot').assignedNodes();
-        this.inputTag = slots[0];
+        this.input = slots[0];
 
-        this.inputTag.setAttribute('tabindex', 0);
-        this.inputTag.setAttribute('class', 'input');
+        this.input.setAttribute('tabindex', 0);
+        this.input.setAttribute('class', 'input');
       }
     }
 
@@ -86,8 +91,22 @@
         this._buildEyeIcon();
 
         // validation
-        this.inputTag.setAttribute('minlength', '6');
-        this.inputTag.setAttribute('maxlength', '10');
+        this.input.setAttribute('minlength', '6');
+        this.input.setAttribute('maxlength', '10');
+        this.input.setAttribute('pattern', '(?=.*\\d)(?=.*[a-z])(?=.*[A-Z]).{6,}');
+        this.input.setAttribute(
+          'title',
+          'Senha deve conter ao menos 6 caracteres, 1 letra maiúscula, 1 letra minúscula e um número.',
+        );
+      }
+
+      if (this.input.nodeName === 'SELECT') {
+        const placeholder = document.createElement('option');
+        placeholder.setAttribute('selected', '');
+        placeholder.setAttribute('value', '');
+        placeholder.setAttribute('disabled', '');
+        placeholder.textContent = this.placeholder;
+        this.input.insertBefore(placeholder, this.input.firstChild);
       }
     }
 
@@ -101,10 +120,10 @@
 
     _onEyeIconClick = () => {
       if (this.eyeIcon.classList.contains('open')) {
-        this.inputTag.type = 'password';
+        this.input.type = 'password';
         this.eyeIcon.className = 'eye-icon close';
       } else {
-        this.inputTag.type = 'text';
+        this.input.type = 'text';
         this.eyeIcon.className = 'eye-icon open';
       }
     }
@@ -124,13 +143,14 @@
     _getAttributeChangesCases(name, newValue) {
       return {
         'label': () => this.labelTag.innerText = newValue,
-        'type': () => this.inputTag.type = newValue,
-        'placeholder': () => this.inputTag.placeholder = newValue,
+        'type': () => this.input.type = newValue,
+        'placeholder': () => this.input.placeholder = newValue,
         'name': () => {
-          this.inputTag.name = newValue;
+          this.input.name = newValue;
           this.labelTag.htmlFor = newValue;
+          this.input.id = newValue;
         },
-        'required': () => this.inputTag.setAttribute('required', ''),
+        'required': () => this.input.setAttribute('required', ''),
         'default': () => console.log('Atributo não definido.'),
       }[name];
     }

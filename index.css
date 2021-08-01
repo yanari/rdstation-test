@@ -38,6 +38,10 @@ input[type="text"] {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+input[type="radio"] {
+  cursor: pointer;
+}
+
 main {
   display: flex;
   flex-direction: column;
