@@ -11,8 +11,14 @@ import './components/input.js';
 
     form.addEventListener('submit', (event) => {
       event.preventDefault();
-      const formData = new FormData(form);
-      console.log(formData);
+
+      new FormData(form); // fires the formdata event
+    });
+
+    form.addEventListener('formdata', ({ formData }) => {
+      for (let value in formData.entries()) {
+        console.log(value);
+      }
     });
 
   });

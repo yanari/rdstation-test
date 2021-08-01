@@ -38,40 +38,55 @@
             required
             type="text"
             label="Diga, qual seu nome?"
-          ></form-field>
+          ><input slot="input" name="name"/></form-field>
           <form-field
             name="email"
             placeholder="Insira seu e-mail"
             required
             type="email"
             label="Seu email de trabalho"
-          ></form-field>
+          ><input slot="input" name="email"/></form-field>
           <form-field
             name="tel"
             placeholder="Insira seu número de telefone com DDD"
             required
             type="tel"
             label="Seu telefone"
-          ></form-field>
+          ><input slot="input" name="tel"/></form-field>
           <form-field
             name="occupation"
             placeholder="Selecione seu cargo"
             required
-            type="select" // TODO: select aqui
             label="Seu cargo de ocupação"
-          ></form-field>
+          >
+            <select slot="input" name="occupation">
+              <option>Sócio(a) / CEO / Proprietário(a)</option>
+              <option>Diretor(a) de Vendas</option>
+              <option>Diretor(a) de Marketing</option>
+              <option>Diretor(a) Outras Áreas</option>
+              <option>Gerente de Marketing</option>
+              <option>Gerente de Vendas</option>
+              <option>Coordenador(a)/Supervisor(a) de Marketing</option>
+              <option>Coordenador(a)/Supervisor(a) de Vendas</option>
+              <option>Analista/Assistente de Marketing</option>
+              <option>Analista/Assistente de Vendas</option>
+              <option>Vendedor(a) / Executivo(a) de Contas</option>
+              <option>Estudante</option>
+              <option>Outros Cargo</option>
+            </select>
+          </form-field>
           <form-field
             name="password"
             required
             type="password"
             label="Crie uma senha"
-          ></form-field>
+          ><input slot="input" name="password"></form-field>
           <form-field
             name="confirm-password"
             required
             type="password"
             label="Confirme sua senha"
-          ></form-field>
+          ><input slot="input" name="confirm-password"></form-field>
           <button type="submit">submitnmt</button>
         </form>
       </div>

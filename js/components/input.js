@@ -15,28 +15,31 @@
       margin-bottom: 8px;
     }
     
-    .form-field > input {
+    .form-field > ::slotted(.input) {
       border: 2px solid var(--bw-color-black);
       box-shadow: inset 6px 6px 0 var(--box-shadow-inset);
       color: var(--bw-color-gray-100);
       font-size: 14px;
       height: 40px;
-      padding: 0 12px;
+      padding: 0 12px !important;
     }
     
-    .form-field > input:active,
-    .form-field > input:focus {
+    .form-field > ::slotted(.input:active),
+    .form-field > ::slotted(.input:focus) {
       border-color: var(--color-primary-60);
       border-radius: 0;
       outline: none;
     }
+
+    .form-field > ::slotted(select.input) {
+      appearance: none;
+      background: url('assets/icons/caret-down.svg') no-repeat right;
+      padding-right: 16px !important;
+    }
   </style>
   <div class="form-field">
     <label for="name">Diga, qual seu nome?</label>
-    <input
-      type="text"
-      placeholder="Insira seu nome"
-    >
+    <slot name="input"></slot>
   </div>
   `;
 
@@ -44,11 +47,15 @@
     constructor() {
       super();
       if (!this.shadowRoot) {
-        this.attachShadow({ mode: 'open' });
+        this.attachShadow({ mode: 'open', delegatesFocus: true });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
 
         this.labelTag = this.shadowRoot.querySelector('label');
-        this.inputTag = this.shadowRoot.querySelector('input');
+        const slots = this.shadowRoot.querySelector('slot').assignedNodes();
+        this.inputTag = slots[0];
+
+        this.inputTag.setAttribute('tabindex', 0);
+        this.inputTag.setAttribute('class', 'input');
       }
     }
 
@@ -76,7 +83,7 @@
           this.inputTag.name = newValue;
           this.labelTag.htmlFor = newValue;
         },
-        'required': () => {},
+        'required': () => this.inputTag.setAttribute('required', ''),
         'default': () => console.log('Atributo não definido.'),
       }[name];
     }
