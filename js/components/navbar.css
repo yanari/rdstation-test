@@ -15,7 +15,8 @@
 }
 
 :host > nav {
-  margin: 24px 0;
+  background-color: var(--bw-color-white);
+  padding: 24px 0;
 }
 
 :host > nav > ul {

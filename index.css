@@ -4,6 +4,7 @@
 
 :root {
   --box-shadow-inset: #EEFBFB;
+  --box-shadow-form: 0px 4px 12px rgba(33, 36, 41, 0.14);
 
   --color-primary-100: #0B485B;
   --color-primary-60: #19C1CE;
@@ -37,20 +38,16 @@
   padding: 0;
 }
 
-body,
-input[type="text"] {
+body {
   color: var(--bw-color-gray-100);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   font-family: var(--font-light-family);
 }
 
 input[type="radio"] {
   cursor: pointer;
-}
-
-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 a {

@@ -12,24 +12,24 @@
   <script type="module" src="./js/app.js"></script>
 </head>
 <body>
+  <header class="header">
+    <div class="header__container">
+      <img
+        alt="RdStation Logo"
+        class="header-logo"
+        src="./assets/images/logo-rd-station-default.svg"
+      />
+      <hamburger-menu></hamburger-menu>
+      <navbar-content class="display-md-none display-lg-flex"></navbar-content>
+    </div>
+  </header>
+  <navbar-content mobile class="display-md-block display-lg-none"></navbar-content>
   <main>
-    <header class="header">
-      <div class="header__container">
-        <img
-          alt="RdStation Logo"
-          class="header-logo"
-          src="./assets/images/logo-rd-station-default.svg"
-        />
-        <hamburger-menu></hamburger-menu>
-        <navbar-content class="display-md-none display-lg-flex"></navbar-content>
-      </div>
-    </header>
-    <navbar-content mobile class="display-md-block display-lg-none"></navbar-content>
     <section class="row">
       <div class="form-container col-lg-4 col-12">
         <div class="form-container__presentation">
-          <h3 class="heading">Comece seus 10 dias de teste grátis do RD Station Marketing!</h3>
-          <p>Não precisa cadastrar cartão de crédito. 😉</p>
+          <h3 class="heading-xs">Comece seus 10 dias de teste grátis do RD Station Marketing!</h3>
+          <p class="subtitle-xs">Não precisa cadastrar cartão de crédito. 😉</p>
         </div>
         <form id="contact_form" action="https://app.rdstation.com.br/signup" method="POST">
           <form-field
@@ -90,7 +90,7 @@
           <p class="body-md-bold">Qual o site da sua empresa?</p>
           <radio-button-form-field
             name="has_site"
-            type="radio"
+            checked="true"
             label="Meu site é"
             id="1"
           >
@@ -107,61 +107,61 @@
         </form>
       </div>
     </section>
-    <footer class="footer">
-      <div class="footer__container">
-        <div class="footer__container__first-row">
-          <div class="footer__logo">
-            <img
-              alt="RdStation Logo"
-              class="footer__logo--image"
-              src="./assets/images/logo-rd-station-bw.svg"
-            />
-          </div>
-          <hr class="display-md-block display-lg-none">
-          <div class="footer__social-icons">
-            <a href="https://twitter.com/rd_station" target="_blank" rel="noopener noreferrer">
-              <img
-                alt="Twitter"
-                src="./assets/social/twitter.svg"
-              />
-            </a>
-            <a href="https://www.facebook.com/ResultadosDigitais/" target="_blank" rel="noopener noreferrer">
-              <img
-                alt="Facebook"
-                src="./assets/social/facebook.svg"
-              />
-            </a>
-            <a href="https://www.linkedin.com/showcase/resultadosdigitais/" target="_blank" rel="noopener noreferrer">
-              <img
-                alt="LinkedIn"
-                src="./assets/social/linkedin.svg"
-              />
-            </a>
-            <a href="https://www.instagram.com/resdigitais/" target="_blank" rel="noopener noreferrer">
-              <img
-                alt="Instagram"
-                src="./assets/social/instagram.svg"
-              />
-            </a>
-            <a href="https://www.youtube.com/channel/UC5lPKvmw6-DFya_qreisENQ" target="_blank" rel="noopener noreferrer">
-              <img
-                alt="Youtube"
-                src="./assets/social/youtube.svg"
-              />
-            </a>
-          </div>
+  </main>
+  <footer class="footer">
+    <div class="footer__container">
+      <div class="footer__container__first-row">
+        <div class="footer__logo">
+          <img
+            alt="RdStation Logo"
+            class="footer__logo--image"
+            src="./assets/images/logo-rd-station-bw.svg"
+          />
         </div>
-        <hr class="display-md-none display-lg-block">
-        <div class="footer__container__last-row">
-          <p>
-            © 2021 <strong>RD Station.</strong>
-            <a href="https://legal.rdstation.com/pt/privacy-policy/">
-              Política de Privacidade.
-            </a>
-          </p>
+        <hr class="display-md-block display-lg-none">
+        <div class="footer__social-icons">
+          <a href="https://twitter.com/rd_station" target="_blank" rel="noopener noreferrer">
+            <img
+              alt="Twitter"
+              src="./assets/social/twitter.svg"
+            />
+          </a>
+          <a href="https://www.facebook.com/ResultadosDigitais/" target="_blank" rel="noopener noreferrer">
+            <img
+              alt="Facebook"
+              src="./assets/social/facebook.svg"
+            />
+          </a>
+          <a href="https://www.linkedin.com/showcase/resultadosdigitais/" target="_blank" rel="noopener noreferrer">
+            <img
+              alt="LinkedIn"
+              src="./assets/social/linkedin.svg"
+            />
+          </a>
+          <a href="https://www.instagram.com/resdigitais/" target="_blank" rel="noopener noreferrer">
+            <img
+              alt="Instagram"
+              src="./assets/social/instagram.svg"
+            />
+          </a>
+          <a href="https://www.youtube.com/channel/UC5lPKvmw6-DFya_qreisENQ" target="_blank" rel="noopener noreferrer">
+            <img
+              alt="Youtube"
+              src="./assets/social/youtube.svg"
+            />
+          </a>
         </div>
       </div>
-    </footer>
-  </main>
+      <hr class="display-md-none display-lg-block">
+      <div class="footer__container__last-row">
+        <p>
+          © 2021 <strong>RD Station.</strong>
+          <a href="https://legal.rdstation.com/pt/privacy-policy/">
+            Política de Privacidade.
+          </a>
+        </p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>

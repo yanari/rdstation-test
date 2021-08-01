@@ -1,5 +1,7 @@
 .form-container {
-
+  border-radius: 2px;
+  box-shadow: var(--box-shadow-form);
+  padding: 40px 24px;
 }
 
 .form-container > .form-container__presentation {
@@ -9,8 +11,15 @@
   text-align: center;
 }
 
-.form-container > .form-container__presentation > h3 {
-  font-family: 'Darker Grotesque';
+.form-container > .form-container__presentation > p {
+  color: var(--bw-color-gray-70);
+  margin-top: 16px;
 }
 
+.form-container > form > p {
+  margin-bottom: 16px;
+}
 
+.form-container > form > custom-button {
+  width: 100%;
+}

@@ -50,7 +50,7 @@
     }
   
     static get observedAttributes() {
-      return ['required', 'label', 'name', 'id'];
+      return ['required', 'label', 'name', 'id', 'selected'];
     }
   
     attributeChangedCallback(name, _, newValue) {
@@ -65,22 +65,39 @@
           this.input.id = newValue;
           this.labelTag.htmlFor = newValue;
         },
-        'required': () => this.input.setAttribute('required', ''),
-        'default': () => console.log('Atributo não definido.'),
+        'required': () => this.input.required = newValue, // necessario?
+        'checked': () => this.checked = newValue, // necessario?
+        'default': () => {},
       }[name];
     }
   
     // Getters and setters
-    get required() {
-      return this.hasAttribute('required');
+    // get required() {
+    //   return this.hasAttribute('required');
+    // }
+  
+    // set required(value) {
+    //   value = Boolean(value);
+    //   if (value) {
+    //     this.setAttribute('required', '');
+    //   } else {
+    //     this.removeAttribute('required');
+    //   }
+    // }
+
+    get checked() {
+      return this.hasAttribute('checked');
     }
   
-    set required(value) {
+    set checked(value) {
       value = Boolean(value);
+      console.log(value);
       if (value) {
-        this.setAttribute('required', '');
+        this.input.setAttribute('checked', '');
+        this.setAttribute('checked', '');
       } else {
-        this.removeAttribute('required');
+        this.input.removeAttribute('checked');
+        this.removeAttribute('checked');
       }
     }
   
