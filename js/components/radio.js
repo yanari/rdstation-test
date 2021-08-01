@@ -16,8 +16,6 @@
       width: 18px;
     }
     
-    .form-field > ::slotted(.input:active),
-    .form-field > ::slotted(.input:focus),
     .form-field > ::slotted(.input:checked) {
       background-color: var(--bw-color-gray-100);
       border: 5px solid var(--color-primary-60);
@@ -46,12 +44,13 @@
         this.input = slots[0];
   
         this.input.setAttribute('tabindex', 0);
+        this.input.setAttribute('type', 'radio');
         this.input.setAttribute('class', 'input');
       }
     }
   
     static get observedAttributes() {
-      return ['required', 'label', 'type', 'placeholder', 'name'];
+      return ['required', 'label', 'name', 'id'];
     }
   
     attributeChangedCallback(name, _, newValue) {
@@ -61,12 +60,10 @@
     _getAttributeChangesCases(name, newValue) {
       return {
         'label': () => this.labelTag.innerText = newValue,
-        'type': () => this.input.type = newValue,
-        'placeholder': () => this.input.placeholder = newValue,
-        'name': () => {
-          this.input.name = newValue;
-          this.labelTag.htmlFor = newValue;
+        'name': () => this.input.name = newValue,
+        'id': () => {
           this.input.id = newValue;
+          this.labelTag.htmlFor = newValue;
         },
         'required': () => this.input.setAttribute('required', ''),
         'default': () => console.log('Atributo não definido.'),
@@ -93,22 +90,6 @@
   
     set label(value) {
       this.setAttribute('label', value);
-    }
-  
-    get type() {
-      return this.getAttribute('type');
-    }
-  
-    set type(value) {
-      this.setAttribute('type', value);
-    }
-  
-    get placeholder() {
-      return this.getAttribute('placeholder');
-    }
-  
-    set placeholder(value) {
-      this.setAttribute('placeholder', value);
     }
   
     get name() {

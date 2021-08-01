@@ -14,7 +14,37 @@
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
         this.addStylesheet();
+        this.visibleButton = this.shadowRoot.querySelector('button');
       }
+    }
+
+    connectedCallback() {
+      if (this.type === 'submit') {
+        this.hiddenButton = document.createElement('button');
+        this.hiddenButton.setAttribute('hidden', '');
+        this.hiddenButton.setAttribute('type', 'submit');
+        this.appendChild(this.hiddenButton);
+
+        this.visibleButton.addEventListener('click', this._onClick);
+      }
+    }
+
+    disconnectCallback() {
+      if (this.type === 'submit') {
+        this.visibleButton.removeEventListener('click', this._onClick);
+      }
+    }
+
+    _onClick = () => {
+      this.hiddenButton.click();
+    }
+
+    get type() {
+      return this.getAttribute('type');
+    }
+
+    set type(value) {
+      this.setAttribute('type', value);
     }
   
     addStylesheet() {
