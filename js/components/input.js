@@ -3,9 +3,6 @@
   template.innerHTML = `
   <style>
     .form-field {
-      display: flex;
-      flex-direction: column;
-      justify-content: stretch;
       margin-bottom: 16px;
     }
     
@@ -14,32 +11,56 @@
       font-weight: 700;
       margin-bottom: 8px;
     }
+
+    .form-field > .input-wrapper {
+      display: flex;
+      position: relative;
+    }
     
-    .form-field > ::slotted(.input) {
+    .form-field > .input-wrapper > ::slotted(.input) {
       border: 2px solid var(--bw-color-black);
       box-shadow: inset 6px 6px 0 var(--box-shadow-inset);
       color: var(--bw-color-gray-100);
       font-size: 14px;
       height: 40px;
       padding: 0 12px !important;
+      width: 100%;
     }
     
-    .form-field > ::slotted(.input:active),
-    .form-field > ::slotted(.input:focus) {
+    .form-field > .input-wrapper > ::slotted(.input:active),
+    .form-field > .input-wrapper > ::slotted(.input:focus) {
       border-color: var(--color-primary-60);
       border-radius: 0;
       outline: none;
     }
 
-    .form-field > ::slotted(select.input) {
+    .form-field > .input-wrapper > ::slotted(select.input) {
       appearance: none;
       background: url('assets/icons/caret-down.svg') no-repeat right;
-      padding-right: 16px !important;
+      background-origin: border-box;
     }
+
+    .form-field > .input-wrapper > .eye-icon {
+      height: 100%;
+      position: absolute;
+      right: 2px;
+      width: 20px;
+    }
+
+    .form-field > .input-wrapper > .eye-icon.open {
+      background: url('assets/icons/open.svg') no-repeat right;
+    }
+
+    .form-field > .input-wrapper > .eye-icon.close {
+      background: url('assets/icons/close.svg') no-repeat right;
+    }
+
   </style>
   <div class="form-field">
     <label for="name">Diga, qual seu nome?</label>
-    <slot name="input"></slot>
+    <div class="input-wrapper">
+      <slot name="input"></slot>
+    </div>
   </div>
   `;
 
@@ -61,9 +82,35 @@
 
     connectedCallback() {
       if (this.type === 'password') {
+        // Show/hide password
+        this._buildEyeIcon();
+
+        // validation
         this.inputTag.setAttribute('minlength', '6');
         this.inputTag.setAttribute('maxlength', '10');
       }
+    }
+
+    _buildEyeIcon() {
+      const wrapper = this.shadowRoot.querySelector('.input-wrapper');
+      this.eyeIcon = document.createElement('span');
+      this.eyeIcon.setAttribute('class', 'eye-icon close');
+      this.eyeIcon.addEventListener('click', this._onEyeIconClick);
+      wrapper.appendChild(this.eyeIcon);
+    }
+
+    _onEyeIconClick = () => {
+      if (this.eyeIcon.classList.contains('open')) {
+        this.inputTag.type = 'password';
+        this.eyeIcon.className = 'eye-icon close';
+      } else {
+        this.inputTag.type = 'text';
+        this.eyeIcon.className = 'eye-icon open';
+      }
+    }
+
+    disconnectCallback() {
+      this.eyeIcon.removeEventListener('click', this._onEyeIconClick)
     }
 
     static get observedAttributes() {
@@ -89,7 +136,6 @@
     }
 
     // Getters and setters
-
     get required() {
       return this.hasAttribute('required');
     }
