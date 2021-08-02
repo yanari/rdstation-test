@@ -9,6 +9,7 @@
 #together > .together-container {
   background-color: var(--color-primary-100);
   color: var(--bw-color-white);
+  /* margin-bottom: 904px; */
   margin-top: 656px;
   padding: 80px 0;
 }

@@ -3,6 +3,7 @@
 @import url('./css/form.css');
 @import url('./css/hero.css');
 @import url('./css/together.css');
+@import url('./css/list.css');
 
 :root {
   --box-shadow-inset: #EEFBFB;
