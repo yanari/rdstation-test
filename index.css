@@ -4,6 +4,7 @@
 @import url('./css/hero.css');
 @import url('./css/together.css');
 @import url('./css/list.css');
+@import url('./css/benefits.css');
 
 :root {
   --box-shadow-inset: #EEFBFB;
@@ -156,7 +157,7 @@ hr {
   display: grid;
   gap: 24px;
   grid-template-columns: repeat(12, 1fr);
-  margin: auto;
+  margin: auto 16px;
   max-width: var(--max-width);
 }
 
@@ -239,6 +240,10 @@ hr {
 
   .display-lg-flex {
     display: flex;
+  }
+
+  .row {
+    margin: auto;
   }
 
   .row > .col-lg-1 {
