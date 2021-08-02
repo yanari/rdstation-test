@@ -19,6 +19,7 @@
     
     .form-field > .input-wrapper > ::slotted(.input) {
       border: 2px solid var(--bw-color-black);
+      border-radius: 0;
       box-shadow: inset 6px 6px 0 var(--box-shadow-inset);
       color: var(--bw-color-gray-100);
       font-size: 14px;
@@ -35,7 +36,6 @@
     .form-field > .input-wrapper > ::slotted(.input:focus) {
       border-color: var(--color-primary-60);
       box-shadow: none;
-      border-radius: 0;
       outline: none;
     }
 

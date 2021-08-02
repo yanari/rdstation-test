@@ -1,7 +1,7 @@
 .header {
   background-color: var(--bw-color-white);
   border-bottom: 1px solid var(--bw-color-gray-30);
-  z-index: 2;
+  z-index: 3;
 }
 
 .header > .header__container {
