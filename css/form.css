@@ -1,32 +1,33 @@
-.form-container {
+#form-container {
+  background-color: var(--bw-color-white);
   border-radius: 2px;
   box-shadow: var(--box-shadow-form);
   padding: 40px 24px;
 }
 
-.form-container > .form-container__presentation {
+#form-container > .form-container__presentation {
   border-bottom: 1px solid var(--bw-color-gray-30);
   margin-bottom: 24px;
   padding-bottom: 24px;
   text-align: center;
 }
 
-.form-container > .form-container__presentation > p {
+#form-container > .form-container__presentation > p {
   color: var(--bw-color-gray-70);
   margin-top: 16px;
 }
 
-.form-container > form > p {
+#form-container > form > p {
   margin-bottom: 16px;
 }
 
-.form-container > form > .form-field {
+#form-container > form > .form-field {
   align-items: center;
   display: flex;
   margin-bottom: 16px;
 }
 
-.form-container > form > .form-field > input[type="radio"] {
+#form-container > form > .form-field > input[type="radio"] {
   appearance: none;
   border-radius: 50%;
   border: 1px solid var(--bw-color-gray-60);
@@ -34,16 +35,16 @@
   width: 18px;
 }
 
-.form-container > form > .form-field > input[type="radio"]:checked {
+#form-container > form > .form-field > input[type="radio"]:checked {
   background-color: var(--bw-color-gray-100);
   border: 5px solid var(--color-primary-60);
   outline: none;
 }
 
-.form-container > form > .form-field > label {
+#form-container > form > .form-field > label {
   margin-left: 12px;
 }
 
-.form-container > form > custom-button {
+#form-container > form > custom-button {
   width: 100%;
 }

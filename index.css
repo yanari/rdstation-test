@@ -1,6 +1,8 @@
 @import url('./css/header.css');
 @import url('./css/footer.css');
 @import url('./css/form.css');
+@import url('./css/hero.css');
+@import url('./css/together.css');
 
 :root {
   --box-shadow-inset: #EEFBFB;
@@ -46,6 +48,11 @@ body {
   font-family: var(--font-light-family);
 }
 
+main {
+  padding: 40px 0;
+  position: relative;
+}
+
 input[type="radio"] {
   cursor: pointer;
 }
@@ -63,61 +70,73 @@ hr {
   font-family: var(--font-bold-family);
   font-size: 40px;
   font-weight: 900;
+  line-height: 100%;
 }
 
 .heading-md {
   font-family: var(--font-bold-family);
   font-size: 32px;
   font-weight: 900;
+  line-height: 100%;
 }
 
 .heading-sm {
   font-family: var(--font-bold-family);
   font-size: 24px;
   font-weight: 900;
+  line-height: 110%;
 }
 
 .heading-xs {
   font-family: var(--font-bold-family);
   font-size: 20px;
   font-weight: 800;
+  line-height: 110%;
 }
 
 .subtitle-sm {
   font-size: 16px;
   font-weight: 400;
+  line-height: 140%;
 }
 
 .subtitle-xs {
   font-size: 14px;
   font-weight: 400;
+  line-height: 120%;
 }
 
 .body-lg {
   font-size: 20px;
   font-weight: 400;
+  line-height: 150%;
 }
 
 .body-lg-bold {
   font-weight: 700;
+  line-height: 150%;
 }
 
 .body-md {
   font-weight: 400;
+  line-height: 150%;
 }
 
 .body-md-bold {
   font-size: 16px;
   font-weight: 700;
+  line-height: 150%;
 }
 
 .body-sm {
   font-size: 14px;
   font-weight: 400;
+  line-height: 150%;
 }
 
 .body-sm-bold {
   font-weight: 700;
+  line-height: 150%;
 }
 
 .display-md-none {
