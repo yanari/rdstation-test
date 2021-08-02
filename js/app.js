@@ -2,13 +2,13 @@ import './components/navbar.js';
 import './components/button.js';
 import './components/hamburger.js';
 import './components/input.js';
-import './components/radio.js';
+import './components/website_input.js';
 
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
     'use strict';
 
-    const form = document.getElementById('contact_form');
+    const formElement = document.getElementById('contact_form');
     const confirmPasswordElement = document.getElementById('confirm_password');
     const passwordElement = document.getElementById('password');
 
@@ -17,10 +17,9 @@ import './components/radio.js';
         method: 'POST',
         formData,
       });
-
       console.log(response);
     };
-
+  
     confirmPasswordElement.addEventListener('input', (event) => {
       if (passwordElement.value !== event.target.value) {
         confirmPasswordElement.setCustomValidity('As senhas devem ser iguais.');
@@ -29,7 +28,7 @@ import './components/radio.js';
       }
     });
     
-    form.addEventListener('submit', (event) => {
+    formElement.addEventListener('submit', (event) => {
       // event.preventDefault();
       
       // const formData = new FormData(event.target);

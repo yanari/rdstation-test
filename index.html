@@ -88,21 +88,20 @@
             label="Confirme sua senha"
           ><input slot="input" name="confirm_password"></form-field>
           <p class="body-md-bold">Qual o site da sua empresa?</p>
-          <radio-button-form-field
-            name="has_site"
-            checked="true"
-            label="Meu site é"
-            id="1"
+          <div class="form-field">
+            <input id="has_site" type="radio" name="has_site" checked>
+            <label for="has_site">Meu site é</label>
+          </div>
+          <website-form-field
+            placeholder="Insira o endereço do seu site"
+            required="true"
           >
-            <input slot="option" name="has_site">
-          </radio-button-form-field>
-          <radio-button-form-field
-            name="has_site"
-            label="Ainda não tenho site"
-            id="0"
-          >
-            <input slot="option" name="has_site">
-          </radio-button-form-field>
+            <input slot="input" name="website">
+          </website-form-field>
+          <div class="form-field">
+            <input id="has_not" type="radio" name="has_site">
+            <label for="has_not">Ainda não tenho site</label>
+          </div>
           <custom-button highlight type="submit">Criar minha conta</custom-button>
         </form>
       </div>
