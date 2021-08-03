@@ -3,6 +3,8 @@ import './components/button.js';
 import './components/hamburger.js';
 import './components/input.js';
 import './components/website_input.js';
+import './components/video_thumbnail.js';
+import './components/modal.js';
 
 (function () {
   document.addEventListener('DOMContentLoaded', () => {
@@ -27,6 +29,7 @@ import './components/website_input.js';
         confirmPasswordElement.setCustomValidity('');
       }
     });
+
     
     formElement.addEventListener('submit', (event) => {
       // event.preventDefault();
