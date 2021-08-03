@@ -5,6 +5,7 @@
 @import url('./css/together.css');
 @import url('./css/list.css');
 @import url('./css/benefits.css');
+@import url('./css/demo.css');
 
 :root {
   --box-shadow-inset: #EEFBFB;

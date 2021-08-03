@@ -1,0 +1,42 @@
+#demo {
+  background-color: var(--bw-color-gray-10);
+  /* margin-bottom: 40px; */
+  margin-top: 64px;
+}
+
+#demo .demo__row {
+  position: relative;
+}
+
+#demo .content {
+  margin-top: 40px;
+  margin-bottom: 8px;
+}
+
+#demo .content .button {
+  margin-top: 16px;
+  text-align: center;
+}
+
+#demo .video-thumbnail {
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  #demo {
+    margin-top: 144px;
+  }
+
+  #demo .content {
+    margin: 0;
+    padding: 66px 0;
+  }
+
+  #demo .video-thumbnail__wrapper {
+    display: inherit;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
