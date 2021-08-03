@@ -13,9 +13,15 @@
       if (!this.shadowRoot) {
         this.attachShadow({ mode: 'open' });
         this.shadowRoot.appendChild(template.content.cloneNode(true));
-        this.addStylesheet();
         this.visibleButton = this.shadowRoot.querySelector('button');
+        const allAttributes = this.getAttributeNames();
+        allAttributes.forEach(attribute => this.visibleButton.setAttribute(attribute, attribute));
+        this.addStylesheet();
       }
+    }
+
+    attributeChangedCallback(name, _, newValue) {
+      this.visibleButton[name] = newValue;
     }
 
     connectedCallback() {

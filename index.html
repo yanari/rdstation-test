@@ -36,7 +36,7 @@
           <h3 class="heading-xs">Comece seus 10 dias de teste grátis do RD Station Marketing!</h3>
           <p class="subtitle-xs">Não precisa cadastrar cartão de crédito. 😉</p>
         </div>
-        <form id="contact_form" action="https://app.rdstation.com.br/signup" method="POST">
+        <form id="contact_form" action="https://app.rdstation.com.br/signup" method="POST" target="_blank">
           <form-field
             name="name"
             placeholder="Insira seu nome"
@@ -160,7 +160,7 @@
         <div class="content col-lg-4 col-12">
           <h3 class="heading-sm">Entenda melhor como o RD Station Marketing funciona na prática</h3>
           <div class="button">
-            <custom-button secondary>
+            <custom-button secondary open-modal>
               Assista a demonstração
             </custom-button>
           </div>
@@ -168,8 +168,9 @@
         <div class="video-thumbnail__wrapper col-12 col-lg-7">
           <img
             class="video-thumbnail"
+            open-modal
             src="./assets/images/img-video-thumbnail.png"
-            alt="Assista a demonstração"
+            alt="Conheça o RD Station Marketing"
           />
         </div>
       </div>
@@ -232,4 +233,5 @@
     </div>
   </footer>
 </body>
+<video-modal></video-modal>
 </html>
