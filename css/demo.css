@@ -1,11 +1,6 @@
 #demo {
   background-color: var(--bw-color-gray-10);
-  /* margin-bottom: 40px; */
   margin-top: 64px;
-}
-
-#demo .demo__row {
-  position: relative;
 }
 
 #demo .content {
@@ -24,7 +19,7 @@
 
 @media (min-width: 768px) {
   #demo {
-    margin-top: 144px;
+    margin: 144px 0;
   }
 
   #demo .content {
@@ -33,6 +28,10 @@
   }
 
   #demo .video-thumbnail__wrapper {
+    position: relative;
+  }
+
+  #demo .video-thumbnail__wrapper img {
     display: inherit;
     position: absolute;
     right: 0;
